@@ -1,0 +1,269 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+@font-face {
+	font-family: 'BMJUA';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+$path: 'process.env.PUBLIC_URL';
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+li {
+	list-style: none;
+}
+img {max-width:100%;}
+button {
+	background: rgb(186, 9, 9);
+	color: #fff;
+	border-radius: 5px;
+	padding: 8px;
+	border: none;
+}
+input {
+	border: none;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 5px;
+	outline: none;
+}
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 250px;
+	height: 100vh;
+	background: black;
+	color: #fff;
+	ul {
+		text-align: center;
+		li {
+			padding-top: 50px;
+			font-size: 30px;
+			font-family: 'BMJUA';
+			transition: background-color 0.3s;
+			a {
+				color: #fff;
+				font-family: 'BMJUA';
+				white-space: nowrap;
+			}
+			p {
+				font-family: 'BMJUA';
+				cursor: pointer;
+			}
+		}
+	}
+	ul.login {
+		position: absolute;
+		left: 50%;
+		bottom: 10vw;
+		transform: translateX(-50%);
+
+		p {
+			font-family: 'BMJUA';
+			cursor: pointer;
+		}
+		span {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			vertical-align: sub;
+			margin-right:9px;
+			img {
+				width:100%;
+			}
+		}
+	}
+	.mobile {
+		display: none;
+		p {
+			width: 30px;
+			height: 30px;
+			img {
+				width: 100%;
+			}
+		}
+	}
+	.mobile-gnb {
+		position: fixed;
+		top:70px;
+		right:-100%;
+		background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+		width: 300px;
+		height: 100vh;
+		transition: all 0.5s;
+	}
+}
+
+.layout {
+	padding: 40px;
+	padding-left: 300px;
+	h2 {
+		padding-bottom: 15px;
+	}
+	.list {
+		background: rgb(250, 242, 242);
+		margin-bottom: 30px;
+		li {
+			padding: 20px;
+			padding-bottom: 30px;
+			&:first-child {
+				&::before {
+					content: '-';
+					display: inline-block;
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+	.detail {
+		.detail-box {
+			background: rgb(250, 242, 242);
+			margin-bottom: 30px;
+			padding: 30px;
+		}
+		ul {
+			display: flex;
+			gap: 10px;
+		}
+		a,
+		button {
+			padding: 0;
+			display: block;
+			min-width: 250px;
+			height: 30px;
+			line-height: 30px;
+			background: rgb(204, 36, 36);
+			color: #fff;
+			outline: none;
+			border: none;
+			text-align: center;
+		}
+	}
+}
+
+.movie-detail {
+	display: flex;
+	gap: 10px;
+	div:first-child {
+		flex-basis: 500px;
+		img {
+			width: 100%;
+		}
+	}
+	div.content {
+		width: 100%;
+		table {
+			border: 1px solid #ddd;
+			width: 100%;
+			height: 100%;
+			border-collapse: collapse;
+			&.mobile-table {
+				height: auto;
+				display: none;
+			}
+
+			tr {
+				th {
+					width: 150px;
+					background-color: #eee;
+					border-bottom: 1px solid #ddd;
+				}
+				td {
+					width: calc(100% / 4);
+					padding: 0 10px;
+					vertical-align: middle;
+					border-bottom: 1px solid #ddd;
+					text-align: center;
+					font-size: 18px;
+
+					ul {
+						display: inline;
+					}
+				}
+				&:last-child {
+					td {
+						&:last-child {
+							border-bottom: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and (max-width: 1000px) {
+	header {
+		z-index:9765;
+		width:100%;
+		height:8vh;
+		.pc {		
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			height:100%;
+			> ul {
+				display: flex;
+				align-items: center;
+				gap: 30px;
+				> li {
+					padding-top:0;
+					a {
+						font-size: 26px;
+					}
+				}
+			}
+			ul.login {
+				position: static;
+				transform: none;
+			}
+		}
+	}
+	.layout {
+		padding-left:40px;
+		padding-top: 12vh;
+	}
+}
+
+@media all and (max-width: 768px) {
+	header {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		.pc {
+			display: none;
+		}
+		.mobile {
+			display: block;
+			margin-right: 30px;
+			cursor: pointer;
+		}
+		ul.login {
+			bottom:30vw;
+		}
+		.gnb-bar{
+			width: 30px;
+			height: 30px;
+			background-repeat: no-repeat;
+			background-size:cover;
+		}
+	}
+}
+
+@media all and (max-width: 500px) {
+	.layout{padding:20px;padding-top: 12vh}
+}
+
+.swiper-button-next, .swiper-button-prev{transform: translateY(-50%)}

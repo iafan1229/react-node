@@ -1,0 +1,363 @@
+.keyword {
+	display: inline-block;
+	margin-top: 10px;
+	padding: 30px;
+	background: #eee;
+	h3 {
+		padding-bottom: 10px;
+	}
+	ul {
+		display: flex;
+		gap: 10px;
+		li {
+			cursor: pointer;
+			&:hover {
+				transform: scale(1.1);
+				transition: transform 0.5s;
+			}
+		}
+	}
+}
+
+.showBox {
+	margin-top: 30px;
+	border-top: 1px solid #ddd;
+	p {
+		padding-top: 50px;
+	}
+	ul {
+		li {
+			&:first-child {
+				padding-top: 15px;
+			}
+			&:hover {
+				overflow: hidden;
+				img {
+					transform: scale(1.05);
+					transition: transform 1s;
+				}
+			}
+		}
+	}
+}
+
+/*로그인 UI 시작*/
+@import url('https://rsms.me/inter/inter-ui.css');
+::selection {
+	background: #2d2f36;
+}
+::-webkit-selection {
+	background: #2d2f36;
+}
+::-moz-selection {
+	background: #2d2f36;
+}
+.page {
+	background: #e2e2e5;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	place-content: center;
+	// width: calc(100% - 40px);
+	padding: 5vw;
+}
+@media (max-width: 767px) {
+	.page {
+		height: auto;
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+	}
+}
+.page .container {
+	display: flex;
+	height: 320px;
+	margin: 0 auto;
+	width: 640px;
+}
+@media (max-width: 767px) {
+	.page .container {
+		flex-direction: column;
+		height: 630px;
+		width: 320px;
+	}
+}
+.left {
+	background: white;
+	top: 20px;
+	position: relative;
+	width: 50%;
+	height: 300px;
+}
+@media (max-width: 767px) {
+	.left {
+		height: 100%;
+		left: 20px;
+		width: calc(100% - 40px);
+		max-height: 270px;
+	}
+}
+.page .login {
+	font-size: 50px;
+	font-weight: 900;
+	margin: 50px 40px 40px;
+}
+.eula {
+	color: #999;
+	font-size: 14px;
+	line-height: 1.5;
+	margin: 40px;
+}
+.right {
+	background: #474a59;
+	box-shadow: 0px 0px 40px 16px rgba(0, 0, 0, 0.22);
+	color: #f1f1f2;
+	position: relative;
+	width: 50%;
+	height: 420px;
+}
+@media (max-width: 767px) {
+	.right {
+		flex-shrink: 0;
+		height: 100%;
+		width: 100%;
+		max-height: 470px;
+	}
+}
+
+.form {
+	margin: 40px;
+	position: absolute;
+}
+
+.form label {
+	color: #c2c2c5;
+	display: block;
+	font-size: 14px;
+	height: 16px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	font-family: 'Inter UI', sans-serif;
+}
+.form .input-wrap {
+	background: linear-gradient(
+		90deg,
+		rgba(131, 58, 180, 1) 0%,
+		rgba(253, 29, 29, 1) 50%,
+		rgba(252, 176, 69, 1) 100%
+	);
+}
+.form p {
+	padding: 5px 0;
+	font-size: 16px;
+}
+.form input:not([type='submit']) {
+	background: transparent;
+	border: none;
+	color: #f2f2f2;
+	font-size: 20px;
+	height: 30px;
+	line-height: 30px;
+	width: 100%;
+	background: #474a59;
+	margin-bottom: 8px;
+	:hover {
+		outline: auto;
+	}
+}
+.form input::-moz-focus-inner {
+	border: 0;
+}
+#submit {
+	margin-top: 40px;
+	background: transparent;
+	border-radius: 5px;
+	border: 1px solid #fff;
+	width: 100%;
+	padding: 10px 0;
+	color: #fff;
+	transition: color 300ms;
+}
+/*로그인 UI 끝 */
+
+.user-title {
+	position: relative;
+
+	img {
+		width: 20px;
+		height: 20px;
+		margin-right: 10px;
+	}
+}
+
+.join-wrap {
+	position: relative;
+	background: #eee;
+	display: inline-block;
+	width: 800px;
+	.left {
+		z-index:2;
+		background: #474a5b;
+		height: 350px;
+		margin-left: 30px;
+		form {
+			width: 300px;
+			background: transparent;
+			display: inline-block;
+			padding: 2vw;
+			position: relative;
+			display: flex;
+			flex-wrap: wrap;
+			align-content: space-around;
+			height: 270px;
+			> div {
+				width: 100%;
+			}
+			p {
+				color: #fff;
+				font-size: 14px;
+				padding: 10px 0;
+			}
+			label {
+				color: #fff;
+				display: block;
+			}
+			input:not(input[type='submit']) {
+				padding-top: 10px;
+				background: transparent;
+				outline: none;
+				border: none;
+				border-bottom: 1px solid #eee;
+				color: #fff;
+				width: 100%;
+				padding-bottom: 5px;
+			}
+			input[type='submit'] {
+				border: 1px solid #eee;
+				border-radius: 5px;
+				height: 5vh;
+				width: 100%;
+				color: #fff;
+				width: 300px;
+				background: transparent;
+			}
+		}
+	}
+	.right {
+		z-index:1;
+		position: absolute;
+		top:30px;
+		right:30px;
+		background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+		border: 7px solid #eee;
+		width: 49%;
+    height: 78%;
+		.right-text{
+			position: absolute;
+			top:50%;
+			padding: 30px;
+			padding-left: 70px;
+			transform: translateY(-50%);
+			h3 {
+				color:#eee;
+				font-size: 30px;
+				+ p {
+					padding-top: 30px;
+				}
+			}
+
+		}
+	}
+}
+
+.board-write {
+	width: 300px;
+	label {
+		display: block;
+	}
+	input,
+	textarea {
+		border: 1px solid rgb(140, 139, 139);
+		width: 100%;
+	}
+	textarea {
+		resize: none;
+	}
+	input[type='submit'] {
+		width: 100%;
+	}
+}
+
+.search-input {
+	width: 470px;		
+}
+
+@media all and (max-width:1200px) {
+	.movie-detail {flex-wrap: wrap;}
+	.movie-detail div.content table tr td, .movie-detail div.content table tr th{padding: 20px;}
+	.movie-detail div:first-child{width:300px;height:500px;margin:0 auto;}
+	.movie-detail div:first-child img{height: 100%;}
+	.movie-detail div:first-child img{object-fit: cover;}
+}
+@media all and (max-width: 860px) {
+	.join-wrap {
+		width: auto;
+		.left {
+			width: 100%;
+			max-height:none;
+			form {
+				padding: 40px;
+			}
+		}
+		.right {
+			position: static;
+			display: none;
+			.right-text{
+				position: static;
+			}
+		}
+	}
+}
+@media all and (max-width: 768px) {
+	.pc-table {display: none;}
+	.movie-detail div.content table.mobile-table{display: table;}
+	.movie-detail div.content table tr td{width:auto;}
+	.back{margin-top: 10px;}
+	.page{position: static;}
+	.page .container{width:100%;}
+}
+@media all and (max-width: 600px) {
+	.keyword {
+		width: 100%;
+		padding: 0;
+		h3 {
+			padding: 20px;padding-bottom:0;
+		}
+		ul {
+			display: block;
+			padding: 20px;
+		}
+	}
+	.search-input {
+		width: calc(100% - 55px);
+	}
+}
+@media all and (max-width: 530px) {
+	.join-wrap {
+		background: #fff;
+		.left {
+			top:0;
+			left: 0;
+			margin-left: 0;
+			form {
+				width: auto;
+			}
+		}
+	}
+	.join-wrap .left form input[type=submit]{width: auto;
+		min-width:200px;}
+}
+@media all and (max-width: 400px) {
+	.movie-detail div.content{overflow-x: auto;}
+	.movie-detail div:first-child{width:auto;}
+}
+

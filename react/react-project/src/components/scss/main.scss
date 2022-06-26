@@ -1,0 +1,20 @@
+.grid {
+	overflow: hidden;
+	&:hover {
+		img {
+			transform: scale(1.05);
+			transition: transform 1s;
+		}
+	}
+}
+.recent {
+	h2 {
+		padding-top: 30px;
+	}
+	.swiper {
+		min-height: 400px;
+	}
+}
+.test {
+	background: red;
+}
